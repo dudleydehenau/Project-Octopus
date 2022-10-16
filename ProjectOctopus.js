@@ -1,4 +1,4 @@
-//créateur du projet : Dudley, Dimtri, Dudley2
+//créateur du projet : Dudley, Dimtri
 
 
 //Déclaration de variable

@@ -1,3 +1,6 @@
+//créateur du projet : Dudley
+
+
 //Déclaration de variable
 
 let nbrVie;

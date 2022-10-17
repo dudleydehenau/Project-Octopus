@@ -40,24 +40,33 @@ function game() {
  * @returns {Number} - retourne 1, 2 ou 3
  */
 function choixAttDefFuite() {
-    let choix = Number(prompt("Introduire 1 pour attaquer, 2 pour défendre et 3 pour fuire"));
+    let choix;
     let Attaquer = 1;
     let Defendre = 2;
     let Fuire = 3;
-    
-    for(let i = 0; i <=3; i++){
+
+    while((choix != 3) && (choix != 2) && (choix != 1)){
+        choix = Number(prompt("Introduire 1 pour attaquer, 2 pour défendre et 3 pour fuire"));
+        if(choix > 3){
+            console.log("Introduire un nombre entre 1 et 3");
+        }
+        else {
+            console.log(choix);
+        }
     }
+    
 
     if(choix == 1){
-        return "Vous attaquez"
+        return "Vous attaquez";
     }
     else if(choix == 2){
-        return "Vous défendez"
+        return "Vous défendez";
     }
     else{
-        return "Vous fuyez"
+        return "Vous fuyez";
     }
-    console.log(choixAttDefFuite());
+}
+console.log(choixAttDefFuite());
 }
 
 /**

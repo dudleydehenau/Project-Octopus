@@ -46,16 +46,15 @@ function choixAttDefFuite() {
     let Fuire = 3;
 
     if(choix == 1){
-        console.log("Vous attaquez");
+        return "Vous attaquez"
     }
     else if(choix == 2){
-        console.log("Vous défendez");
+        return "Vous défendez"
     }
     else{
-        console.log("Vous fuyez");
+        return "Vous fuyez"
     }
-}
-console.log(choixAttDefFuite());
+    console.log(choixAttDefFuite());
 }
 
 /**

@@ -44,6 +44,9 @@ function choixAttDefFuite() {
     let Attaquer = 1;
     let Defendre = 2;
     let Fuire = 3;
+    
+    for(let i = 0; i <=3; i++){
+    }
 
     if(choix == 1){
         return "Vous attaquez"

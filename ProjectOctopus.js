@@ -40,7 +40,22 @@ function game() {
  * @returns {Number} - retourne 1, 2 ou 3
  */
 function choixAttDefFuite() {
+    let choix = Number(prompt("Introduire 1 pour attaquer, 2 pour défendre et 3 pour fuire"));
+    let Attaquer = 1;
+    let Defendre = 2;
+    let Fuire = 3;
 
+    if(choix == 1){
+        console.log("Vous attaquez");
+    }
+    else if(choix == 2){
+        console.log("Vous défendez");
+    }
+    else{
+        console.log("Vous fuyez");
+    }
+}
+console.log(choixAttDefFuite());
 }
 
 /**

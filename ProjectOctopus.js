@@ -121,16 +121,16 @@ function choixEnnemi() {
         return 1;
     }
     else{
-        return 2
+        return 2;
     }
 }
-//Je suis pas sur que ça soit bon, mais j'essaie.
+//Je suis pas sûr que ça soit bon, mais j'essaie.
 
 /**
  * Pour créer différentes difficulté de jeux, on choisi avec combien de vie démarre le joueur, 7 pour facile, 5 pour moyen, et 3 pour difficiles.
  * Cette function au moment d'être appelé va : 
  * -Demander à l'utilisateur de choisir en prompt entre facile, moyen et difficile
- * -Test ce qui rentre et recommenbce si ne correspond pas à un choix
+ * -Test ce qui rentre et recommence si ne correspond pas à un choix
  * -attribue une valleur a nbrVie en fonction du choix du joueur
  * -attribue une valleur a modeJeu identique que celle attribuer a nbrVie 
  * -retourne le choix pris

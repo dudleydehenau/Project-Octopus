@@ -52,7 +52,7 @@ function game() {
     console.log("Vous décidez d'aller vers : " + promptP("Veuillez choisir entre", "gauche", "droite", "le chemin"));
     if(premierChoix == gauche) {
         console.log("Le trajet vous semble être long jusqu'à la forêt, et la nuit s'apprête à tomber.");
-        console.log("Voulez vous avancer, ou bien vous poser en dessous d'un arbre sur el haut d'une coline.");
+        console.log("Voulez vous avancer, ou bien vous poser en dessous d'un arbre sur le haut d'une coline.");
         choix2 = promptP("Choissisez", "entre", "Continuer", "Dormir");
         console.log("Vous avez choisi : " + choix2)
         if(choix2 == Dormir) {

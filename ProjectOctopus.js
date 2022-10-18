@@ -41,33 +41,36 @@ function game() {
  */
 function choixAttDefFuite() {
     let choix;
-    let Attaquer = 1;
-    let Defendre = 2;
-    let Fuire = 3;
+    //let Attaquer = 1;
+    //let Defendre = 2;
+    //let Fuire = 3;
 
     while((choix != 3) && (choix != 2) && (choix != 1)){
         choix = Number(prompt("Introduire 1 pour attaquer, 2 pour défendre et 3 pour fuire"));
-        if(choix > 3){
+        /**if(choix > 3){
             console.log("Introduire un nombre entre 1 et 3");
         }
         else {
             console.log(choix);
+        }*/
+        if(choix == 1){
+            return 1;
+        }
+        else if(choix == 2){
+            return 2;
+        }
+        else if (choix == 3){
+            return 3;
+        } else {
+            console.log("Veuillez entrer un chiffr een 1 et 3")
         }
     }
     
 
-    if(choix == 1){
-        return "Vous attaquez";
-    }
-    else if(choix == 2){
-        return "Vous défendez";
-    }
-    else{
-        return "Vous fuyez";
-    }
+    
 }
 console.log(choixAttDefFuite());
-}
+
 
 /**
  * Function qui va donner un résultat random entre attaquer et defendre

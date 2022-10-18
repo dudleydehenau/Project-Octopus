@@ -62,12 +62,9 @@ function choixAttDefFuite() {
         else if (choix == 3){
             return 3;
         } else {
-            console.log("Veuillez entrer un chiffr een 1 et 3")
+            console.log("Veuillez entrer un chiffre entre 1, 2 et 3")
         }
     }
-    
-
-    
 }
 console.log(choixAttDefFuite());
 
@@ -78,8 +75,9 @@ console.log(choixAttDefFuite());
  * @returns {Number} - retourne 1 ou 2
  */
 function choixEnnemi() {
-
+    return (Math.random()+1).toFixed()
 }
+
 
 /**
  * Pour créer différentes difficulté de jeux, on choisi avec combien de vie démarre le joueur, 7 pour facile, 5 pour moyen, et 3 pour difficiles.

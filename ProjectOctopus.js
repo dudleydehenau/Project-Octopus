@@ -115,8 +115,16 @@ console.log(choixAttDefFuite());
  * @returns {Number} - retourne 1 ou 2
  */
 function choixEnnemi() {
+    choixEnnemi = Math.random() * 2;
+    
+    if(choixEnnemi == 1){
+        return 1;
+    }
+    else{
+        return 2
+    }
 }
-
+//Je suis pas sur que ça soit bon, mais j'essaie.
 
 /**
  * Pour créer différentes difficulté de jeux, on choisi avec combien de vie démarre le joueur, 7 pour facile, 5 pour moyen, et 3 pour difficiles.

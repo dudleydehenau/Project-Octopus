@@ -47,6 +47,7 @@ function choixAttDefFuite() {
 
     while((choix != 3) && (choix != 2) && (choix != 1)){
         choix = Number(prompt("Introduire 1 pour attaquer, 2 pour défendre et 3 pour fuire"));
+        //J'ai laissé ton anciens codes. Vu que tu étais à deux doigt que ça fonctionne, j'ai modifier et laisser ce qu'il y avait :)
         /**if(choix > 3){
             console.log("Introduire un nombre entre 1 et 3");
         }

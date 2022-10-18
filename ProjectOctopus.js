@@ -6,6 +6,7 @@
 let nbrVie;
 let modeJeu;
 let premierChoix;
+let choix2; 
 
 //Introduction du jeu
 
@@ -48,11 +49,19 @@ function game() {
     console.log("Vous suivez un petit tracé aux sol semblant indiqué vers où vous devriez vous rendre")
     console.log("Soudainement, le chemin se divise en deux. à gauche, au loin, apparaît de haut arbres. et à droite, un chemin semblant plus aride et rempli de dénivelé.")
     premierChoix = prompt()
-    console.log("Vous décidez d'aller vers : " + promptP("Allez vers la", "gauche", "droite", "le chemin"));
+    console.log("Vous décidez d'aller vers : " + promptP("Veuillez choisir entre", "gauche", "droite", "le chemin"));
     if(premierChoix == gauche) {
+        console.log("Le trajet vous semble être long jusqu'à la forêt, et la nuit s'apprête à tomber.");
+        console.log("Voulez vous avancer, ou bien vous poser en dessous d'un arbre sur el haut d'une coline.");
+        choix2 = promptP("Choissisez", "entre", "Continuer", "Dormir");
+        console.log("Vous avez choisi : " + choix2)
+        if(choix2 == Dormir) {
 
+        } else if (choix2 == Continuer) {
+
+        }
     } else if (premierChoix == droite) {
-        
+
     }
     
 }
@@ -106,7 +115,6 @@ console.log(choixAttDefFuite());
  * @returns {Number} - retourne 1 ou 2
  */
 function choixEnnemi() {
-    return (Math.random()+1).toFixed()
 }
 
 
@@ -158,15 +166,7 @@ function choixPorte() {
  * @returns {Number} - renvoie le nombre de vie gagné
  */
 function soin() {
-    if(nbrVie + 2 <= modeJeu) {
-        nbrVie += 2;
-        return 2
-    } else if (nbrVie != modeJeu) {
-        nbrVie += 1;
-        return 1
-    } else {
-        return 0
-    }
+    
 }
 
 /**
@@ -195,4 +195,5 @@ function promptP(message, r1, r2, nom) {
     while((temp != r1) && (temp != r2)) {
         temp = prompt(message + " " + nom + " " + r1 + " ou " + r2);
     }
+    return temp
 } 

@@ -125,5 +125,10 @@ function soin() {
  * @returns {(Number|Boolean)} - Nombre de vie ou, si joueur mort, false 
 */
 function vie(nbrVie) {
-
+    nbrVie = nbrVie - 1;
+    if(nbrVie > 0) {
+        return nbrVie;
+    } else if(nbrVie <= 0) {
+        return false;
+    }
 }

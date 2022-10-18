@@ -89,7 +89,7 @@ function choixEnnemi() {
  * -attribue une valleur a modeJeu identique que celle attribuer a nbrVie 
  * -retourne le choix pris
  * 
- * @returns {string} - renvoie le mode de jeu (facile, moyen ou difficile)
+ * @returns {number} - renvoie le mode de jeu (facile, moyen ou difficile) en nombre de vie
  */
 function choixMode() {
     
@@ -110,8 +110,17 @@ function choixMode() {
  * @returns {Number} - renvoie le nombre de vie gagné
  */
 function soin() {
-
+    if(nbrVie + 2 <= modeJeu) {
+        nbrVie += 2;
+        return 2
+    } else if (nbrVie != modeJeu) {
+        nbrVie += 1;
+        return 1
+    } else {
+        return 0
+    }
 }
+
 
 //----------------------------------------------Fuction de fonctionnement de base----------------------------------------------
 

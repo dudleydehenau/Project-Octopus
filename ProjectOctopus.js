@@ -115,7 +115,7 @@ console.log(choixAttDefFuite());
  * @returns {Number} - retourne 1 ou 2
  */
 function choixEnnemi() {
-    choixEnnemi = Math.random() * 2;
+    choixEnnemi = (Math.random() * 2);
     
     if(choixEnnemi == 1){
         return 1;

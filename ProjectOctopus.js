@@ -5,6 +5,7 @@
 
 let nbrVie;
 let modeJeu;
+let premierChoix;
 
 //Introduction du jeu
 
@@ -24,7 +25,36 @@ function game() {
     console.log("Votre personnage se doit d'avancer, cependant, vous ne savez pas pourquoi. Tout ce que vous savez, c'est que cette être prend la forme d'un poulpe-humanoide à " + nbrVie + " tentacule.");
     console.log("Pour le reste, c'est votre histoire, à vous de prendre des decisions et d'avancer au plus loin.")
     console.log("Bonne chance et surtout, bonne amusement")
-    //suite jeu
+    alert("Prêt pour démarrer l'aventure (ça sert à rien d'appuyer sur non)")
+    console.log("Un premier choix s'offre à vous. Vous êtes face à trois portes identiques dans une pièces noir. Vous ne savez pas qui vous êtes et qu'est ce que vous faites là, cependant, vous êtes certain que le choix de la porte peut porter atteinte a votre expérience de vie.")
+    console.log("La première vous semble accesible et réconfortante. Un parfait choix pour un débutant ou pour passer du bon temps")
+    console.log("La seconde vous semble plus hostile, quoique si vous êtes en quête d'aventure, cela peut-être le choix parfait")
+    console.log("Pour la dernière, rien ne semble donner envie d'y toucher, rien qu'à la vie, celle-ci vous fait frissoner, cependant, vous ne rejetter pas le choix de celui-ci")
+    console.log("Vous réfléchissez un moment et prenez un choix:")
+    console.log("Vous choisiez la porte " + choixPorte());
+    if (modeJeu == 7) {
+        console.log("Peut-être perçu comme un choix avec peu d'audace, c'est celui qui permet le mieux de découvrir le monde qui nous entourre sans être constamment aux aguets")
+    } else if (modeJeu == 5) {
+        console.log("Le parfait équilibre entre challenge et tranquillité, permet de profitez tout en ayant du challenge");
+    } else if (modeJeu == 3) {
+        console.log("Le choix le plus osé, et le plus dire, intéressant, voyons si le choix n'étais pas trop osé");
+    }
+    console.log("Vous vous réveillez sur ce qui vous semble être un lit d'appoint posé sur une planche. Vous essayez de décrochez votre membre solidement colé à la planche")
+    console.log("Vous vous levez et vous appercevez uniquement de l'eau, en tout cas face à vous. Vous vous penchez vers l'eau et y voyez votre reflets")
+    console.log("Vous êtes de type Poulpe-Humanoide, une des plus habile des espèces existant. Vous posédez : " + nbrVie + " tentacules 🦑.")
+    console.log("Vous vous regrdez encore un momement en essayant de vous souvenirs. De quoi, vous ne savez pas. Vous ne savez rien. En tous cas, rien de vous. Mais cela n'est pas vraiment un problème")
+    console.log("Vous vous retourner et voyez un petit coffre. Dans celui-ci, des vêtements adapté à vos nombre de tentacules et quelque object servant à trouver votre chemin semble tout prêt pour vous")
+    console.log("Et derrière le petit coffre se trouve le dernier objet atypique présente, un petit sac de voyage se portant de l'épaule aux hanches. Vous y ranger vos trouvailles et ne comprenez pas encore bien ce que vous faites. Mais cela semble être la seul chose à faire")
+    console.log("Vous suivez un petit tracé aux sol semblant indiqué vers où vous devriez vous rendre")
+    console.log("Soudainement, le chemin se divise en deux. à gauche, au loin, apparaît de haut arbres. et à droite, un chemin semblant plus aride et rempli de dénivelé.")
+    premierChoix = prompt()
+    console.log("Vous décidez d'aller vers : " + promptP("Allez vers la", "gauche", "droite", "le chemin"));
+    if(premierChoix == gauche) {
+
+    } else if (premierChoix == droite) {
+        
+    }
+    
 }
 
 //----------------------------------------------Function méchanique de jeux----------------------------------------------
@@ -88,11 +118,29 @@ function choixEnnemi() {
  * -attribue une valleur a nbrVie en fonction du choix du joueur
  * -attribue une valleur a modeJeu identique que celle attribuer a nbrVie 
  * -retourne le choix pris
+ * - atrribue la valeur adequat a nbrVie
  * 
- * @returns {number} - renvoie le mode de jeu (facile, moyen ou difficile) en nombre de vie
+ * @returns {number} - renvoie le mode de jeu (facile, moyen ou difficile) avec un number de 1, 2 ou 3
  */
-function choixMode() {
-    
+function choixPorte() {
+    let porte = prompt("Choisiez la porte (1, 2 ou 3)")
+    while((porte != 1) && (porte != 2) && (porte != 3)) {
+        if ((porte != 1) && (porte != 2) && (porte != 3)) {
+            console.log("Mauvais choix, veuillez rerentrée une valeur entre 1, 2 et 3")
+        } else if (porte == 1) {
+            nbrVie = 7;
+            modeJeu = 7;
+            return 1
+        } else if (porte == 2) {
+            nbrVie = 5;
+            modeJeu = 5;
+            return 2
+        } else if (porte == 3) {
+            nbrVie = 3;
+            modeJeu = 3;
+            return 3
+        }
+    }
 }
 
 /**
@@ -121,9 +169,6 @@ function soin() {
     }
 }
 
-
-//----------------------------------------------Fuction de fonctionnement de base----------------------------------------------
-
 /**
  * Function ayant but de, en cas de mort, être appelé pour : 
  * - Enlever un au nombre de vie du joueur
@@ -142,3 +187,12 @@ function vie(nbrVie) {
         return false;
     }
 }
+
+//----------------------------------------------Function de focntionnement de base----------------------------------------------
+
+function promptP(message, r1, r2, nom) {
+    let temp;
+    while((temp != r1) && (temp != r2)) {
+        temp = prompt(message + " " + nom + " " + r1 + " ou " + r2);
+    }
+} 

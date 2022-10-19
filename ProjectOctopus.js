@@ -173,10 +173,15 @@ function choixPorte() {
  * 
  * @returns {Number} - renvoie le nombre de vie gagné
  */
-function soin() {
-    
+function soin(nbreVie,modeJeu){
+	if (nbreVie + 2 <= modeJeu){
+		nbrVie += 2;
+	}
+	else if (nbreVie +1 == modeJeu){
+		nbreVie += 1;
+	}
+	return console.log(nbreVie);
 }
-
 /**
  * Function ayant but de, en cas de mort, être appelé pour : 
  * - Enlever un au nombre de vie du joueur

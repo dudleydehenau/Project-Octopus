@@ -180,7 +180,7 @@ function soin(nbreVie,modeJeu){
 	else if (nbreVie +1 == modeJeu){
 		nbreVie += 1;
 	}
-	return console.log(nbreVie);
+	return nbreVie;
 }
 /**
  * Function ayant but de, en cas de mort, être appelé pour : 

@@ -224,11 +224,10 @@ function choixEnnemi() {
  * @returns {number} - renvoie le mode de jeu (facile, moyen ou difficile) avec un number de 1, 2 ou 3
  */
 function choixPorte(nbrVie) {
-    let porte = prompt("Choisiez la porte (1, 2 ou 3)")
+    let porte;
     while((porte != 1) && (porte != 2) && (porte != 3)) {
-        if ((porte != 1) && (porte != 2) && (porte != 3)) {
-            console.log("Mauvais choix, veuillez rerentrée une valeur entre 1, 2 et 3");
-        } else if (porte == 1) {
+        porte = +prompt("Choisiez la porte (1, 2 ou 3)")
+        if (porte == 1) {
             nbrVie = 7;
             modeJeu = 7;
             return 1

@@ -33,7 +33,7 @@ function game() {
     console.log("La seconde vous semble plus hostile, quoique si vous êtes en quête d'aventure, cela peut-être le choix parfait")
     console.log("Pour la dernière, rien ne semble donner envie d'y toucher, rien qu'à la vie, celle-ci vous fait frissoner, cependant, vous ne rejetter pas le choix de celui-ci")
     console.log("Vous réfléchissez un moment et prenez un choix:")
-    console.log("Vous choisiez la porte " + choixPorte());
+    console.log("Vous choisisez la porte " + choixPorte());
     if (modeJeu == 7) {
         console.log("Peut-être perçu comme un choix avec peu d'audace, c'est celui qui permet le mieux de découvrir le monde qui nous entourre sans être constamment aux aguets")
     } else if (modeJeu == 5) {
@@ -43,7 +43,7 @@ function game() {
     }
     console.log("Vous vous réveillez sur ce qui vous semble être un lit d'appoint posé sur une planche. Vous essayez de décrochez votre membre solidement colé à la planche")
     console.log("Vous vous levez et vous appercevez uniquement de l'eau, en tout cas face à vous. Vous vous penchez vers l'eau et y voyez votre reflets")
-    console.log("Vous êtes de type Poulpe-Humanoide, une des plus habile des espèces existant. Vous posédez : " + nbrVie + " tentacules 🦑.")
+    console.log("Vous êtes de type Poulpe-Humanoide, une des plus habile des espèces existant. Vous posédez : " + modeJeu + " tentacules 🦑.")
     console.log("Vous vous regrdez encore un momement en essayant de vous souvenirs. De quoi, vous ne savez pas. Vous ne savez rien. En tous cas, rien de vous. Mais cela n'est pas vraiment un problème")
     console.log("Vous vous retourner et voyez un petit coffre. Dans celui-ci, des vêtements adapté à vos nombre de tentacules et quelque object servant à trouver votre chemin semble tout prêt pour vous")
     console.log("Et derrière le petit coffre se trouve le dernier objet atypique présente, un petit sac de voyage se portant de l'épaule aux hanches. Vous y ranger vos trouvailles et ne comprenez pas encore bien ce que vous faites. Mais cela semble être la seul chose à faire")
@@ -139,7 +139,7 @@ function game() {
                 if(tempChoix == 1) {
                     if(choixEnnemi == 1) {
                         console.log("Vous attaquez, mais " + lNom + "fait de même en" + nomAttRandom(nom));
-                        vie()
+                        console.log("vous perdez " + vie() + " points de vie");
                     } else if(choixEnnemi == 0) {
                         console.log("Vous attaquez, mais" + lNom + " Se defend");
                     }

@@ -95,7 +95,7 @@ function game() {
                 console.log("Félicitation, vous avez trouver la sortie");
                 console.log("Vous vous avancer, et le sol se défondre sous vos pieds. Vous êtes arriver dans une zone en travaux. La suite aux prochaines mise à jour")
                 return 'win';
-            } else if (templab1 == "droite") {
+            } else if (tempLab1 == "droite") {
                 console.log("Un monstre vous demande de trouver un nombre entre 1 et 100 en moins de 7 fois, si vous échouez, il vous tue");
                 chiffreAlea();
             }
@@ -133,12 +133,21 @@ function game() {
                 } else if(nom == 3) {
                     lNom = "Mr Dewulf";
                 }
-                console.log("Un ennemi, ressemblant bizzarement à " + lNom + " vient vous attaquer");
+                let tempvie = vie();
+                let tempNomAtt = nomAttRandom(nom);
+                console.log("Un ennemi, ressemblant bizzarement à " + lNom+ " vient vous attaquer en " + tempNomAtt);
+                if (tempvie == false) {
+                    console.log("Vous n'avez plus de vie, vous êtes arrivé au bout de vos force. Il semblerais que le chemin choisi mène à une mort certaine toutes personne s'y tentant");
+                    console.log("Vous agonisez au sol, sans comprendre ce qui vous arrive.");
+                    console.log("Vous vous endormez");
+                    return "lose"
+                }
+                //console.log(lNom + " vous enlève une vie );
                
-                let tempChoix = choixAttDefFuite();
+                /**let tempChoix = Number(choixAttDefFuite());
                 if(tempChoix == 1) {
                     if(choixEnnemi == 1) {
-                        console.log("Vous attaquez, mais " + lNom + "fait de même en" + nomAttRandom(nom));
+                        console.log("Vous attaquez, mais " + lNom + " fait de même ");
                         console.log("vous perdez " + vie() + " points de vie");
                     } else if(choixEnnemi == 0) {
                         console.log("Vous attaquez, mais" + lNom + " Se defend");
@@ -146,7 +155,7 @@ function game() {
                 } else if (tempChoix == 2) {
                     console.log("Vous vous défendez et avec la peur, fermer les yeux.");
                     console.log("Il semblerais que vous soyez vivant");
-                }
+                }*/
             }
         }
         
@@ -187,7 +196,7 @@ function choixAttDefFuite() {
         else if(choix == 2){
             return 2;
         } else {
-            console.log("Veuillez entrer un chiffre entre 1, 2 et 3")
+            console.log("Veuillez entrer un chiffre entre 1, 2")
         }
     }
 }
@@ -279,10 +288,10 @@ function soin(){ //Ce n'était pas nécessaire de mettre les paramètre, même s
  * @returns {(Number|Boolean)} - Nombre de vie ou, si joueur mort, false 
 */
 function vie() {
-    nbrVie = nbrVie - 1;
-    if(nbrVie > 0) {
-        return nbrVie;
-    } else if(nbrVie <= 0) {
+    modeJeu = modeJeu - 1;
+    if(modeJeu > 0) {
+        return modeJeu;
+    } else if(modeJeu <= 0) {
         return false;
     }
 }
@@ -314,30 +323,30 @@ function nomAttRandom(nom) {
     if (nom == 1) {
         let temp = nomRandom();
         if (temp == 1) {
-            return console.log("Passer la console en mode root");
+            return ("Passer la console en mode root");
         } else if (temp == 2) {
-            return console.log("Vous jetant du code C au visage");
+            return ("Vous jetant du code C au visage");
         } else if(temp == 3) {
-            return console.log("Sniffer votre bande passante");
+            return ("Sniffer votre bande passante");
         }
     } 
     else if (nom == 2) {
         let temp = nomRandom();
         if (temp ==1) {
-            return console.log("vous espionnant votre écran")
+            return ("vous espionnant votre écran")
         } else if (temp == 2) {
-            return console.log("vérifiant si le TRxx est fait");
+            return ("vérifiant si le TRxx est fait");
         } else if(temp == 3) {
-            return console.log("vous engeulant pour pas avoir fait la prepa");
+            return ("vous engeulant pour pas avoir fait la prepa");
         }
     } else if (nom == 3) {
         let temp = nomRandom();
         if (temp ==1) {
-            return console.log("vous demander de faire une intégrale de tête au tableau")
+            return ("vous demander de faire une intégrale de tête au tableau")
         } else if (temp == 2) {
-            return console.log("vous demandant la racine carré de 234567876543");
+            return ("vous demandant la racine carré de 234567876543");
         } else if(temp == 3) {
-            return console.log("faisant passer deux test en 75 minutes");
+            return ("faisant passer deux test en 75 minutes");
         }
     }
 }
@@ -346,15 +355,17 @@ function chiffreAlea() {
     let promptUser;
     let tempChiffre = 0;
     let tempTp03Ex01_9a = (Math.random()*100).toFixed();
-    promptUser = +prompt("Deviner le nombre entre 1 et 100 !");
-    if (tempTp03Ex01_9a > promptUser) {
-        console.log("Plus grand");
-        tempChiffre += 1;
-    } else if (tempTp03Ex01_9a < promptUser){
-        console.log("plus petit");
-        tempChiffre =+ 1;
-    } else if (tempTp03Ex01_9a == promptUser) {
-        console.log("égal");
-        console.log("Félicitation, vous pouvez repartir en arrière")
+    for(let i = 0; i < 7; i++) {
+        promptUser = +prompt("Deviner le nombre entre 1 et 100 !");
+        if (tempTp03Ex01_9a > promptUser) {
+            console.log("Plus grand");
+            tempChiffre += 1;
+        } else if (tempTp03Ex01_9a < promptUser){
+            console.log("plus petit");
+            tempChiffre =+ 1;
+        } else if (tempTp03Ex01_9a == promptUser) {
+            console.log("égal");
+            console.log("Félicitation, vous pouvez repartir en arrière")
+        }
     }
 }

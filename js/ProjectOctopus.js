@@ -114,10 +114,10 @@ function game() {
             if (mathrandometemp == 0) {
                 console.log("Un ennemi apparaît devant vous et vous lance ce qui semble êtres une patate et prend la fuite");
                 console.log("Vous la ramassez mais comprenez pas ce qu'il s'est passé");
-            } else if (mathrandometemp == 5) {
+            } else if (mathrandometemp == 2) {
                 console.log("Un chien apparaît, vous vous approchez pour le caresser mais celui-ci s'attaque à vous");
                 vie()
-                console.log("Le chien vous arrache une tentacule. Il vous reste " + nbrVie + " vie(s)");
+                console.log("Le chien vous arrache une tentacule. Il vous reste " + modeJeu + " vie(s)");
                 if(nbrVie <= 0) {
                     console.log("Il semble que vous n'avez plus de vie, vous tombez par terre et ..");
                     return console.log('lose');
